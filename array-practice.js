@@ -9,7 +9,7 @@ for (var i = 40; i < 101; i++) {
 }
 console.log(arr);
 arr.sort(arr => Math.random() - 0.5);
-arr.length = 40;
+arr.length = 50;
 console.log("1 - ", arr);
 // 2. 篩選出大於 60 的結果
 console.log("2 - ", arr.filter(item => item > 60));
