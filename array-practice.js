@@ -3,13 +3,22 @@
 */
 
 // 1. 建立一個長度 50，數值介於 40~100 的陣列 (亂數產生) (Array)
+var arrTemp = [];
 var arr = [];
+var arrCounts = 5;
 for (var i = 40; i < 101; i++) {
-    arr.push(i)
+    arrTemp.push(i)
 }
-console.log(arr);
-arr.sort(arr => Math.random() - 0.5);
-arr.length = 50;
+console.log(arrTemp);
+// arr.sort(arr => Math.random() - 0.5);
+// arr.length = 50;
+var countArrTemp = arrTemp.length;
+for (var i = 0; i < arrCounts; i++) {
+    var index = parseInt(Math.random() * countArrTemp) + i;
+    arr[i] = arrTemp[index];
+    arrTemp[index] = arrTemp[i];
+    countArrTemp--;
+}
 console.log("1 - ", arr);
 // 2. 篩選出大於 60 的結果
 console.log("2 - ", arr.filter(item => item > 60));
